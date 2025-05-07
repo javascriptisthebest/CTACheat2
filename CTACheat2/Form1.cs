@@ -39,12 +39,6 @@ namespace CTACheat2
             StatusLabel.Text = "Found save files for " + GameTally.ToString() + " games.";
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            LicenseBox licenseBox = new LicenseBox();
-            licenseBox.ShowDialog();
-        }
-
         private void GameSelectionBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (GameSelectionBox.Text)
@@ -52,15 +46,19 @@ namespace CTACheat2
                 case "CTA 1 (original)":
                     string[] actions = { "Change stage" };
                     ActionSelectionBox.Items.AddRange(actions);
-                break;
+                    break;
                 case "CTA 2 (original)":
                     string[] actions2 = { "Change stage" };
                     ActionSelectionBox.Items.AddRange(actions2);
-                break;
+                    break;
+                case "CTA 3 (original)":
+                    string[] actions3 = { "Not implemented!" };
+                    ActionSelectionBox.Items.AddRange(actions3);
+                    break;
                 case "CTA 4 (original)":
                     string[] actions4 = { "Set post bad ending", "Set bad ending", "Change stage" };
                     ActionSelectionBox.Items.AddRange(actions4);
-                break;
+                    break;
             }
         }
 
@@ -73,20 +71,20 @@ namespace CTACheat2
                     {
                         case "CTA 1 (original)":
                             ValueBox.PlaceholderText = "Type in a stage from 1 to 4";
-                        break;
+                            break;
                         case "CTA 2 (original)":
                             ValueBox.PlaceholderText = "Type in a stage from 1 to 4";
-                        break;
+                            break;
                         case "CTA 4 (original)":
                             ValueBox.PlaceholderText = "Type in a stage from 1 to 4";
-                        break;
+                            break;
                     }
                     ValueBox.Enabled = true;
-                break;
+                    break;
                 default:
                     ValueBox.PlaceholderText = "Type in a value";
                     ValueBox.Enabled = false;
-                break;
+                    break;
             }
         }
 
@@ -94,7 +92,7 @@ namespace CTACheat2
         {
             var parser = new FileIniDataParser();
             string username = Environment.GetEnvironmentVariable("USERNAME");
-            switch(GameSelectionBox.Text)
+            switch (GameSelectionBox.Text)
             {
                 case "CTA 1 (original)":
                     if (ActionSelectionBox.Text == "Change stage")
@@ -102,7 +100,8 @@ namespace CTACheat2
                         try
                         {
                             Int32.Parse(ValueBox.Text);
-                        } catch(Exception c)
+                        }
+                        catch (Exception c)
                         {
                             MessageBox.Show("Unknown exception while parsing value: " + c.Message, "CTACheat: Error on modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
@@ -111,22 +110,23 @@ namespace CTACheat2
                         {
                             MessageBox.Show("Illegal argument: Stage cannot be more than 4 or less than 1!", "CTACheat: Error on modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             return;
-                        } 
-                        
+                        }
+
                         IniData saveFileData = parser.ReadFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi\\progress.ini");
 
                         saveFileData["progress"]["stage"] = ValueBox.Text.ToString();
 
                         parser.WriteFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi\\progress.ini", saveFileData);
                     }
-                break;
+                    break;
                 case "CTA 2 (original)":
-                    if(ActionSelectionBox.Text == "Change stage")
+                    if (ActionSelectionBox.Text == "Change stage")
                     {
                         try
                         {
                             Int32.Parse(ValueBox.Text);
-                        } catch (Exception c)
+                        }
+                        catch (Exception c)
                         {
                             MessageBox.Show("Unknown exception while parsing value: " + c.Message, "CTACheat: Error on modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
@@ -136,29 +136,54 @@ namespace CTACheat2
                             return;
                         }
 
-                        IniData saveFileData = parser.ReadFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Journey\\hello.ini");
+                        IniData saveFileData = parser.ReadFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Bizarre_Adventure\\hello.ini");
 
                         saveFileData["progress"]["stage"] = ValueBox.Text.ToString();
 
-                        parser.WriteFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Journey\\hello.ini", saveFileData);
+                        parser.WriteFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Bizarre_Adventure\\hello.ini", saveFileData);
                     }
+                    break;
+                case "CTA 3 (original)":
+                        if (ActionSelectionBox.Text == "Change stage")
+                        {
+                            try
+                            {
+                                Int32.Parse(ValueBox.Text);
+                            }
+                            catch (Exception c)
+                            {
+                                MessageBox.Show("Unknwon exception while parsing value: " + c.Message, "CTACheat: Error on modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            if (Int32.Parse(ValueBox.Text) > 5 || Int32.Parse(ValueBox.Text) < 1)
+                            {
+                                MessageBox.Show("Illegal argument: Stage cannot be more than 5 or less than 1!", "CTACheat: Error on modification", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
+                       
+                            IniData saveFileData = parser.ReadFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Journey\\hello.ini");
+                    
+                            saveFileData["progress"]["stage"] = ValueBox.Text.ToString();
+
+                            parser.WriteFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Bizarre_Adventure\\hello.ini", saveFileData);
+                        }
                 break;
                 case "CTA 4 (original)":
-                    switch(ActionSelectionBox.Text)
+                    switch (ActionSelectionBox.Text)
                     {
                         case "Set post bad ending":
                             IniData saveFileData = parser.ReadFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Tuna\\file.ini");
 
-                            if(saveFileData["Catto"]["PostBadEnd"] == "1")
+                            if (saveFileData["Catto"]["PostBadEnd"] == "1")
                             {
                                 saveFileData["Catto"]["PostBadEnd"] = "0";
-                            } else
+                            }
+                            else
                             {
                                 saveFileData["Catto"]["PostBadEnd"] = "1";
                             }
 
                             parser.WriteFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Tuna\\file.ini", saveFileData);
-                        break;
+                            break;
                         case "Set bad ending":
                             IniData saveFileData2 = parser.ReadFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Tuna\\file.ini");
 
@@ -172,7 +197,7 @@ namespace CTACheat2
                             }
 
                             parser.WriteFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Tuna\\file.ini", saveFileData2);
-                        break;
+                            break;
                         case "Change stage":
                             try
                             {
@@ -193,10 +218,16 @@ namespace CTACheat2
                             saveFileData3["progress"]["stage"] = ValueBox.Text.ToString();
 
                             parser.WriteFile("C:\\Users\\" + username + "\\AppData\\Local\\Catto_Boi_Tuna\\file.ini", saveFileData3);
-                        break;
+                            break;
                     }
-                break;
+                    break;
             }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            About aboutBox = new About();
+            aboutBox.Show();
         }
     }
 }

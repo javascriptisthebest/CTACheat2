@@ -30,12 +30,11 @@
         {
             button1 = new Button();
             GameSelectionBox = new ComboBox();
-            button2 = new Button();
             StatusLabel = new Label();
             ActionSelectionBox = new ComboBox();
             ValueBox = new TextBox();
-            button3 = new Button();
             BuildDateLabel = new Label();
+            button4 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -57,16 +56,6 @@
             GameSelectionBox.TabIndex = 1;
             GameSelectionBox.Text = "Select a game...";
             GameSelectionBox.SelectedIndexChanged += GameSelectionBox_SelectedIndexChanged;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(439, 236);
-            button2.Name = "button2";
-            button2.Size = new Size(91, 35);
-            button2.TabIndex = 2;
-            button2.Text = "License...";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
             // 
             // StatusLabel
             // 
@@ -96,15 +85,6 @@
             ValueBox.Size = new Size(201, 23);
             ValueBox.TabIndex = 5;
             // 
-            // button3
-            // 
-            button3.Location = new Point(337, 11);
-            button3.Name = "button3";
-            button3.Size = new Size(193, 23);
-            button3.TabIndex = 6;
-            button3.Text = "Open-source acknowledgements";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // BuildDateLabel
             // 
             BuildDateLabel.AutoSize = true;
@@ -114,17 +94,26 @@
             BuildDateLabel.TabIndex = 7;
             BuildDateLabel.Text = "Loading...";
             // 
+            // button4
+            // 
+            button4.Location = new Point(439, 226);
+            button4.Name = "button4";
+            button4.Size = new Size(91, 45);
+            button4.TabIndex = 8;
+            button4.Text = "About CTACheat2";
+            button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(542, 324);
+            Controls.Add(button4);
             Controls.Add(BuildDateLabel);
-            Controls.Add(button3);
             Controls.Add(ValueBox);
             Controls.Add(ActionSelectionBox);
             Controls.Add(StatusLabel);
-            Controls.Add(button2);
             Controls.Add(GameSelectionBox);
             Controls.Add(button1);
             Name = "Form1";
@@ -138,11 +127,10 @@
 
         private Button button1;
         private ComboBox GameSelectionBox;
-        private Button button2;
         private Label StatusLabel;
         private ComboBox ActionSelectionBox;
         private TextBox ValueBox;
-        private Button button3;
         private Label BuildDateLabel;
+        private Button button4;
     }
 }
