@@ -61,12 +61,22 @@ namespace CTACheat2.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Fri 05/02/2025 18:20:40.91 
+        ///   Looks up a localized string similar to Thu 05/22/2025 18:42:42.86 
         ///.
         /// </summary>
         internal static string BuildDate {
             get {
                 return ResourceManager.GetString("BuildDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] CTACheatIcon {
+            get {
+                object obj = ResourceManager.GetObject("CTACheatIcon", resourceCulture);
+                return ((byte[])(obj));
             }
         }
     }

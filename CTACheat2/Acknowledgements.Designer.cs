@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Acknowledgements));
             label1 = new Label();
             linkLabel1 = new LinkLabel();
             SuspendLayout();
@@ -59,6 +60,7 @@
             ClientSize = new Size(443, 226);
             Controls.Add(linkLabel1);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "Acknowledgements";
             Text = "Open-source acknowledgements";
             ResumeLayout(false);

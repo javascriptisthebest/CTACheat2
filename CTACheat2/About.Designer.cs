@@ -1,4 +1,6 @@
-﻿namespace CTACheat2
+﻿using System.Runtime.CompilerServices;
+
+namespace CTACheat2
 {
     partial class About
     {
@@ -28,6 +30,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(About));
             label1 = new Label();
             label2 = new Label();
             button1 = new Button();
@@ -39,9 +42,9 @@
             label1.AutoSize = true;
             label1.Location = new Point(12, 59);
             label1.Name = "label1";
-            label1.Size = new Size(308, 105);
+            label1.Size = new Size(411, 105);
             label1.TabIndex = 0;
-            label1.Text = "CTACheat2, the sequel to CTACheat (that no one wanted)\r\n\r\nProgramming by javascript1\r\nDesign by javascript1\r\n\r\nLicensed under the MIT license.\r\n\r\n";
+            label1.Text = "CTACheat2, the (completely FOSS!) sequel to CTACheat (that no one wanted)\r\n\r\nProgramming by javascript1\r\nDesign by javascript1\r\n\r\nLicensed under the MIT license.\r\n\r\n";
             // 
             // label2
             // 
@@ -83,6 +86,7 @@
             Controls.Add(button1);
             Controls.Add(label2);
             Controls.Add(label1);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "About";
             Text = "About CTACheat2";
             ResumeLayout(false);

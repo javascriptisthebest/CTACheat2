@@ -1,6 +1,6 @@
 ﻿namespace CTACheat2
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Main));
             button1 = new Button();
             GameSelectionBox = new ComboBox();
             StatusLabel = new Label();
@@ -35,6 +36,7 @@
             ValueBox = new TextBox();
             BuildDateLabel = new Label();
             button4 = new Button();
+            button2 = new Button();
             SuspendLayout();
             // 
             // button1
@@ -52,7 +54,7 @@
             GameSelectionBox.FormattingEnabled = true;
             GameSelectionBox.Location = new Point(12, 12);
             GameSelectionBox.Name = "GameSelectionBox";
-            GameSelectionBox.Size = new Size(121, 23);
+            GameSelectionBox.Size = new Size(297, 23);
             GameSelectionBox.TabIndex = 1;
             GameSelectionBox.Text = "Select a game...";
             GameSelectionBox.SelectedIndexChanged += GameSelectionBox_SelectedIndexChanged;
@@ -71,7 +73,7 @@
             ActionSelectionBox.FormattingEnabled = true;
             ActionSelectionBox.Location = new Point(12, 41);
             ActionSelectionBox.Name = "ActionSelectionBox";
-            ActionSelectionBox.Size = new Size(121, 23);
+            ActionSelectionBox.Size = new Size(297, 23);
             ActionSelectionBox.TabIndex = 4;
             ActionSelectionBox.Text = "Select an action...";
             ActionSelectionBox.SelectedIndexChanged += ActionSelectionBox_SelectedIndexChanged;
@@ -82,7 +84,7 @@
             ValueBox.Location = new Point(12, 94);
             ValueBox.Name = "ValueBox";
             ValueBox.PlaceholderText = "Type in a value...";
-            ValueBox.Size = new Size(201, 23);
+            ValueBox.Size = new Size(226, 23);
             ValueBox.TabIndex = 5;
             // 
             // BuildDateLabel
@@ -104,11 +106,23 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // Form1
+            // button2
+            // 
+            button2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button2.Location = new Point(434, 11);
+            button2.Name = "button2";
+            button2.Size = new Size(96, 36);
+            button2.TabIndex = 9;
+            button2.Text = "Settings";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
+            // Main
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(542, 324);
+            Controls.Add(button2);
             Controls.Add(button4);
             Controls.Add(BuildDateLabel);
             Controls.Add(ValueBox);
@@ -116,7 +130,8 @@
             Controls.Add(StatusLabel);
             Controls.Add(GameSelectionBox);
             Controls.Add(button1);
-            Name = "Form1";
+            Icon = (Icon)resources.GetObject("$this.Icon");
+            Name = "Main";
             Text = "CTACheat2";
             Load += Form1_Load;
             ResumeLayout(false);
@@ -132,5 +147,6 @@
         private TextBox ValueBox;
         private Label BuildDateLabel;
         private Button button4;
+        private Button button2;
     }
 }
