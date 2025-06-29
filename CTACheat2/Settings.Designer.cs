@@ -32,6 +32,9 @@
             GameAbbreviationCheck = new CheckBox();
             label1 = new Label();
             button1 = new Button();
+            debugLevelSelection = new ComboBox();
+            label2 = new Label();
+            debugConsoleCheck = new CheckBox();
             SuspendLayout();
             // 
             // GameAbbreviationCheck
@@ -62,13 +65,43 @@
             button1.TabIndex = 2;
             button1.Text = "Save changes";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += this.button1_Click;
+            button1.Click += button1_Click;
+            // 
+            // debugLevelSelection
+            // 
+            debugLevelSelection.FormattingEnabled = true;
+            debugLevelSelection.Location = new Point(86, 28);
+            debugLevelSelection.Name = "debugLevelSelection";
+            debugLevelSelection.Size = new Size(182, 23);
+            debugLevelSelection.TabIndex = 3;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(8, 31);
+            label2.Name = "label2";
+            label2.Size = new Size(72, 15);
+            label2.TabIndex = 4;
+            label2.Text = "Debug level:";
+            // 
+            // debugConsoleCheck
+            // 
+            debugConsoleCheck.AutoSize = true;
+            debugConsoleCheck.Location = new Point(8, 57);
+            debugConsoleCheck.Name = "debugConsoleCheck";
+            debugConsoleCheck.Size = new Size(136, 19);
+            debugConsoleCheck.TabIndex = 5;
+            debugConsoleCheck.Text = "Show debug console";
+            debugConsoleCheck.UseVisualStyleBackColor = true;
             // 
             // Settings
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(540, 227);
+            Controls.Add(debugConsoleCheck);
+            Controls.Add(label2);
+            Controls.Add(debugLevelSelection);
             Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(GameAbbreviationCheck);
@@ -85,5 +118,8 @@
         private CheckBox GameAbbreviationCheck;
         private Label label1;
         private Button button1;
+        private ComboBox debugLevelSelection;
+        private Label label2;
+        private CheckBox debugConsoleCheck;
     }
 }

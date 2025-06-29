@@ -1,15 +1,5 @@
 ﻿using IniParser;
 using IniParser.Model;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace CTACheat2
 {
@@ -30,6 +20,14 @@ namespace CTACheat2
             gameAbbreviationToolTip.ShowAlways = true;
 
             gameAbbreviationToolTip.SetToolTip(this.GameAbbreviationCheck, "(ex: CTA 1 (original) -> The Adventures of Catto Boi (original))");
+
+            debugLevelSelection.Items.Add("None");
+            debugLevelSelection.Items.Add("Error");
+            debugLevelSelection.Items.Add("Verbose");
+
+            GameAbbreviationCheck.Checked = Main.GlobalSettings.GameAbbreviationSetting;
+            debugLevelSelection.SelectedItem = Main.GlobalSettings.DebugLevel;
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,9 +40,24 @@ namespace CTACheat2
 
             IniData settingsData = parser.ReadFile(settingsIniPath);
             settingsData["CTACheat2"]["GameAbbreviationSetting"] = GameAbbreviationCheck.Checked.ToString();
+            settingsData["CTACheat2"]["DebugConsoleSetting"] = debugConsoleCheck.Checked.ToString();
+
+            switch (debugLevelSelection.Text)
+            {
+                case "None":
+                    settingsData["CTACheat2"]["DebugLevel"] = "none";
+                    break;
+                case "Error":
+                    settingsData["CTACheat2"]["DebugLevel"] = "error";
+                    break;
+                case "Verbose":
+                    settingsData["CTACheat2"]["DebugLevel"] = "verbose";
+                    break;
+            }
 
             parser.WriteFile(settingsIniPath, settingsData);
 
+            MessageBox.Show("For now, you need to restart the application to reflect the changes made in the settings window.", "CTACheat2: Info", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
     }
