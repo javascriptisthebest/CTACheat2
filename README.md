@@ -6,5 +6,8 @@ A couple of the remake (paid games) will be implemented in a future update.
 I can currently implement CTA 1, 2, and 4. I cannot implement Journey to Catto Land, Requiem or Forever at this moment.
 Maybe I should e-beg.
 
+# Special thanks
+- zippycta (seemingly disappeared, can't find his website anymore) - For giving me his collection of old Catto Boi Games
+
 # License
 Licensed under the MIT license.
