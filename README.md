@@ -7,7 +7,8 @@ I can currently implement CTA 1, 2, and 4. I cannot implement Journey to Catto L
 Maybe I should e-beg.
 
 # Special thanks
-- zippycta (seemingly disappeared, can't find his website anymore) - For giving me his collection of old Catto Boi Games
+- zippycta (seemingly disappeared, can't find his website anymore) - For giving me his collection of old Catto Boi games
+- mayci_voxel (@macecail on YouTube) for making [a video](https://www.youtube.com/watch?v=eAL5D1u0U5k) on the original CTACheat 
 
 # License
 CTACheat 2 is FOSS (free and open source software), that is; it is licensed under the MIT license.
