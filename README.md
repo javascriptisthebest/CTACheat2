@@ -4,12 +4,14 @@ Except for the 2021 Christmas Special (too short to be worth the effort) and ~Tr
 Trouble in Love Land will probably not be supported (because the savegames use JSON and in C#, JSON is a nightmare to deal with)
 
 A couple of the remake (paid games) will be implemented in a future update. 
-I can currently implement CTA 1, 2, and 4. I cannot implement Journey to Catto Land, Requiem or Forever at this moment.
+~I can currently implement CTA 1, 2, and 4.~
+CTA 1, 2, 4 have been implemented as of June 30th (v0.0.5 update)
+I cannot implement Journey to Catto Land, Requiem or Forever at this moment.
 Maybe I should e-beg.
 
 # Special thanks
 - zippycta (seemingly disappeared, can't find his website anymore) - For giving me his collection of old Catto Boi games
-- mayci_voxel (@macecail on YouTube) for making [a video](https://www.youtube.com/watch?v=eAL5D1u0U5k) on the original CTACheat 
+- mayci_voxel (@macecail on YouTube) - for making [a video](https://www.youtube.com/watch?v=eAL5D1u0U5k) on the original CTACheat 
 
 # License
 CTACheat 2 is FOSS (free and open source software), that is; it is licensed under the MIT license.
