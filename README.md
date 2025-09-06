@@ -15,7 +15,7 @@ Maybe I should e-beg.
 
 # License
 CTACheat 2 is FOSS (free and open source software), that is; it is licensed under the MIT license.
-You are to redistribute, fork, sell or otherwise do whatever to this software. This software is provided "AS-IS", and I don't claim it is 100% perfect. If your computer bursts into flames suddenly while using my software; I am not liable.
+You are to redistribute, fork, sell or otherwise do whatever to this software. This software is provided "AS-IS", and I don't claim it is 100% perfect. If your computer bursts into flames suddenly while using my software, then I am not liable.
 The MIT license text is below.
 
 MIT License
