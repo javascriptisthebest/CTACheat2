@@ -1,3 +1,7 @@
+# Development halted indefinitely
+I switched to Linux. Visual Studio does not run under Linux. 
+While I could try to migrate it to something like MonoDevelop, it's too much effort for something I will get no support for (0 Euros, 0 downloads, 0 thanks). Plus MonoDevelop was unmaintained from January 2020 until October 4th, 2021 when they finally fired a bullet into the half-dead horse and archived the repository for MonoDevelop. Development may continue in the future. MAY.
+
 # CTACheat2: electric boogaloo
 Currently under development. All original games implemented.
 Except for the 2021 Christmas Special (too short to be worth the effort) and ~Trouble in Love Land (will be added in a future update?)~
